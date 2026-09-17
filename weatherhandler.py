@@ -2,9 +2,6 @@ from typing import Any
 
 import requests
 
-# ÖVNINGSPROJEKT - inte din riktiga labb, bara för att träna på samma
-# koncept (klasser, LBYL/EAFP, custom exceptions, cache-mönster, JSON)
-# i en annan domän innan du sätter igång med currencyhandler.py på riktigt.
 #
 # API att använda: OpenWeatherMap (https://openweathermap.org/api)
 # - Skapa ett gratiskonto, hämta din API-nyckel under "API keys" på ditt konto
@@ -15,9 +12,6 @@ import requests
 # Relevanta endpoints att utforska i deras dokumentation:
 # - Aktuellt väder för en stad:
 #   https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric
-# - 5-dagars prognos (3-timmars intervaller), används här istället för
-#   historisk data (som kräver betald plan):
-#   https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}&units=metric
 #
 # Testa båda URL:erna i webbläsaren (byt ut {city} och {API_KEY}) för att se
 # exakt hur svaret ser ut, INNAN du börjar koda.

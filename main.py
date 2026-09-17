@@ -1,4 +1,5 @@
 from weatherhandler import WeatherHandler
+from text import text as t
 
 # ÖVNINGSPROJEKT - se weatherhandler.py för kontext.
 #
@@ -21,60 +22,48 @@ def main() -> None:
     3. Hantera användarens val i en loop tills de väljer att avsluta.
     4. Fånga och hantera fel snyggt - användaren ska aldrig se en rå
        Python-traceback, bara ett vänligt felmeddelande.
-
-    Menyalternativ, förslag:
-    [0] - List tracked cities
-    [1] - Add a new city
-    [2] - Get current temperature for a city
-    [3] - Convert a temperature value between units
-    [4] - Get forecast trend for a city
-    [5] - Refresh data (force a new fetch for all cities)
-    [6] - Export data to JSON
-    [7] - Exit
     """
     weather_handler = WeatherHandler()
 
     while True:
-        print("\nWeather Explorer Menu:")
-        print("[0] - List tracked cities")
-        print("[1] - Add a new city")
-        print("[2] - Get current temperature for a city")
-        print("[3] - Convert a temperature value between units")
-        print("[4] - Get forecast trend for a city")
-        print("[5] - Refresh data")
-        print("[6] - Export data to JSON")
-        print("[q] - Exit")
+        print(t["main_menu"]["menu"])
 
-        choice = input("Enter your choice (0-7): ")
+        choice = input(t["common"]["empty_input"])
 
-        if choice == "0":
-            pass
-
-        elif choice == "1":
-            pass
-
-        elif choice == "2":
-            pass
-
-        elif choice == "3":
-            pass
-
-        elif choice == "4":
-            pass
-
-        elif choice == "5":
-            pass
-
-        elif choice == "6":
-            pass
-
-        elif choice == "q":
-            print("Goodbye!")
+        if choice == "q":
+            print(t["main_menu"]["exit"])
             break
 
+        try:
+            choice = int(choice)
+        except ValueError:
+            print(t["main_menu"]["invalid_choice"])
+            return
+
+        if choice == 0:
+            pass
+
+        elif choice == 1:
+            pass
+
+        elif choice == 2:
+            pass
+
+        elif choice == 3:
+            pass
+
+        elif choice == 4:
+            pass
+
+        elif choice == 5:
+            pass
+
+        elif choice == 6:
+            pass
         else:
-            print("Invalid choice. Please try again.")
+            print(t["main_menu"]["invalid_choice"])
 
 
 if __name__ == "__main__":
+    # Only run main() if this file is executed directly (not when imported)
     main()
